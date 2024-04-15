@@ -1,3 +1,12 @@
+import React from "react";
+
+// interface ProductInterface {
+//     [product: string]: number
+// }
+
+// interface Props {
+//     tax: number
+// }
 
 let products = {
     'iPhone 14': 1000,
@@ -5,19 +14,20 @@ let products = {
     'Samsung S23': 1100
 };
 
-function Products(props) {
+//function Products(props: Props) 
+const Products = (props) => {
     return (
-        <>
+        <div>
             <h1>Product List</h1>
             <p>tax = {props.tax}</p>
             <ul>
             {
                 Object.entries(products).map( ([product, price]) => {
-                    return <li>{product} - ${price} - with tax: ${priceWithTax (price, props.tax)}</li>
+                    return <li>{product} - ${price} - with tax: ${ priceWithTax(price, props.tax) }</li>
                 })
             }
             </ul>
-        </>
+        </div>
     );
 };
 
