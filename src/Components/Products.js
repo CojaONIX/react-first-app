@@ -5,7 +5,7 @@ let products = {
     'Samsung S23': 1100
 };
 
-function Products (props) {
+function Products(props) {
     return (
         <>
             <h1>Product List</h1>
@@ -13,12 +13,16 @@ function Products (props) {
             <ul>
             {
                 Object.entries(products).map( ([product, price]) => {
-                    return <li>{product} - ${price} - with tax: ${price * (1 + props.tax / 100)}</li>
+                    return <li>{product} - ${price} - with tax: ${priceWithTax (price, props.tax)}</li>
                 })
             }
             </ul>
         </>
     );
 };
+
+function priceWithTax(price, tax) {
+    return price * (1 + tax / 100);
+}
 
 export default Products;
