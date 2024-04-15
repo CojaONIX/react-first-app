@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './style.css';
 import Products from './Components/Products';
+import { useState } from 'react';
 
-const name = 'Goran';
+let name = 'Goran';
 const myStyle = {
   color: 'blue',
   backgroundColor: 'yellow',
@@ -21,11 +22,14 @@ function clickOnButton() {
   console.log(name);
 }
 
-function changeName(e) {
-  console.log(e.target.value);
-}
-
 function App() {
+
+  let [name, setName] = useState('Hello!');
+
+  function changeName(e) {
+    setName(e.target.value);
+  }
+
   return (
     <>
       <div style={{ backgroundColor: theme }}>
@@ -36,7 +40,9 @@ function App() {
       </div>
 
       <button onClick={clickOnButton}>{ name }</button>
+      <p>State: { name }</p>
       <input type="text" onInput={changeName} />
+      
 
       <Products tax="20" />
       <Products tax="30" />
