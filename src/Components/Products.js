@@ -1,12 +1,3 @@
-import React from "react";
-
-// interface ProductInterface {
-//     [product: string]: number
-// }
-
-// interface Props {
-//     tax: number
-// }
 
 let products = {
     'iPhone 14': 1000,
@@ -14,11 +5,10 @@ let products = {
     'Samsung S23': 1100
 };
 
-//function Products(props: Props) 
-const Products = (props) => {
+function Products(props) {
     return (
         <div>
-            <h1>Product List</h1>
+            <h1>Product List:</h1>
             <p>tax = {props.tax}</p>
             <ul>
             {
