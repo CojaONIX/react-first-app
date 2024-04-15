@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './style.css';
+import Products from './Components/Products';
 
 const name = 'Goran';
 const myStyle = {
@@ -18,13 +19,16 @@ const theme = hour >= 8 && hour < 20 ? 'lightgreen' : 'darkgreen';
 
 function App() {
   return (
-    <div style={{ backgroundColor: theme }}>
-        <img src={ logo } className='logo' alt='logo' />
-        <h1>Hello world</h1>
-        <p>Pozdrav. Ja se zovem { name }!</p>
-        <p style={ myStyle }>Ovo je moj prvi React App</p>
-        <p style={{ color: paragraphColor, backgroundColor: 'yellow', padding: '10px' }}>Ovo je moj prvi React App</p>
-    </div>
+    <>
+      <div style={{ backgroundColor: theme }}>
+          <img src={ logo } className='logo' alt='logo' />
+          <p>Pozdrav. Ja se zovem { name }!</p>
+          <p style={ myStyle }>Ovo je moj prvi React App</p>
+          <p style={{ color: paragraphColor, backgroundColor: 'yellow', padding: '10px' }}>Ovo je moj prvi React App</p>
+      </div>
+
+      <Products/>
+    </>
   );
 }
 
