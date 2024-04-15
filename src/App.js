@@ -27,7 +27,7 @@ function App() {
           <p style={{ color: paragraphColor, backgroundColor: 'yellow', padding: '10px' }}>Ovo je moj prvi React App</p>
       </div>
 
-      <Products/>
+      <Products tax="20" />
     </>
   );
 }

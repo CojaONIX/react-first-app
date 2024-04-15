@@ -3,13 +3,14 @@ let products = [
     'iPhone 14', 'iPhone 15', 'Samsung S23'
 ];
 
-function Products () {
+function Products (props) {
     return (
         <>
-            <h1>Hello world</h1>
+            <h1>Product List</h1>
+            <p>tax = {props.tax}</p>
             <ul>
             {
-                products.map(function(product) {
+                products.map(product => {
                     return <li>{product}</li>
                 })
             }
