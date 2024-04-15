@@ -41,8 +41,6 @@ function App() {
       <input type="number" onInput={ (e) => setTax(e.target.value) } />
 
       <Products tax={ tax } />
-      <Products tax="30" />
-      <Products tax="50" />
 
     </>
   );
