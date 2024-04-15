@@ -10,10 +10,16 @@ const myStyle = {
 
 const paragraphColor = 'red';
 
+let date = new Date();
+let hour = date.getHours();
+//hour = 17;
+console.log(hour);
+const theme = hour >= 8 && hour < 20 ? 'lightgreen' : 'darkgreen';
+
 function App() {
   return (
-    <div className="App">
-        <img src={ logo } className="logo" alt="logo" />
+    <div style={{ backgroundColor: theme }}>
+        <img src={ logo } className='logo' alt='logo' />
         <h1>Hello world</h1>
         <p>Pozdrav. Ja se zovem { name }!</p>
         <p style={ myStyle }>Ovo je moj prvi React App</p>
