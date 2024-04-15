@@ -1,7 +1,9 @@
 
-let products = [
-    'iPhone 14', 'iPhone 15', 'Samsung S23'
-];
+let products = {
+    'iPhone 14': 1000,
+    'iPhone 15': 1250,
+    'Samsung S23': 1100
+};
 
 function Products (props) {
     return (
@@ -10,8 +12,8 @@ function Products (props) {
             <p>tax = {props.tax}</p>
             <ul>
             {
-                products.map(product => {
-                    return <li>{product}</li>
+                Object.entries(products).map( ([product, price]) => {
+                    return <li>{product} - ${price} - with tax: ${price * (1 + props.tax / 100)}</li>
                 })
             }
             </ul>

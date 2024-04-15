@@ -28,6 +28,8 @@ function App() {
       </div>
 
       <Products tax="20" />
+      <Products tax="25" />
+      <Products tax="30" />
     </>
   );
 }
