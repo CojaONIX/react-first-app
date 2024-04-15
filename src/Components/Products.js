@@ -1,14 +1,17 @@
-
-let products = {
-    'iPhone 14': 1000,
-    'iPhone 15': 1250,
-    'Samsung S23': 1100
-};
+import { useState } from "react";
 
 function Products(props) {
+
+    let [products, setProducts] = useState({
+        'iPhone 14': 10010,
+        'iPhone 15': 1250,
+        'Samsung S23': 1100
+    });
+
     return (
         <div>
             <h1>Product List, tax: {props.tax}% :</h1>
+            <button onClick={ () => setProducts({}) }>Delete Products</button>
             <ul>
             {
                 Object.entries(products).map( ([product, price]) => {
