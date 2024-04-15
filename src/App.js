@@ -17,6 +17,14 @@ let hour = date.getHours();
 console.log(hour);
 const theme = hour >= 8 && hour < 20 ? 'lightgreen' : 'darkgreen';
 
+function clickOnButton() {
+  console.log(name);
+}
+
+function changeName(e) {
+  console.log(e.target.value);
+}
+
 function App() {
   return (
     <>
@@ -27,9 +35,13 @@ function App() {
           <p style={{ color: paragraphColor, backgroundColor: 'yellow', padding: '10px' }}>Ovo je moj prvi React App</p>
       </div>
 
+      <button onClick={clickOnButton}>{ name }</button>
+      <input type="text" onInput={changeName} />
+
       <Products tax="20" />
       <Products tax="30" />
       <Products tax="50" />
+
     </>
   );
 }
