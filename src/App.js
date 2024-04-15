@@ -3,7 +3,6 @@ import './style.css';
 import Products from './Components/Products';
 import { useState } from 'react';
 
-let name = 'Goran';
 const myStyle = {
   color: 'blue',
   backgroundColor: 'yellow',
@@ -18,16 +17,23 @@ let hour = date.getHours();
 console.log(hour);
 const theme = hour >= 8 && hour < 20 ? 'lightgreen' : 'darkgreen';
 
-function clickOnButton() {
-  console.log(name);
-}
 
 function App() {
 
-  let [name, setName] = useState('Hello!');
+  let [name, setName] = useState('Hello');
+  let [tax, setTax] = useState(20);
 
   function changeName(e) {
     setName(e.target.value);
+  }
+
+  function clickOnButton() {
+    console.log(name);
+  }
+
+  
+  function changeTax(e) {
+    setTax(e.target.value);
   }
 
   return (
@@ -40,11 +46,14 @@ function App() {
       </div>
 
       <button onClick={clickOnButton}>{ name }</button>
-      <p>State: { name }</p>
       <input type="text" onInput={changeName} />
-      
 
-      <Products tax="20" />
+      <br /><br />
+
+      <label>Tax:</label><br />
+      <input type="number" onInput={changeTax} />
+
+      <Products tax={ tax } />
       <Products tax="30" />
       <Products tax="50" />
 

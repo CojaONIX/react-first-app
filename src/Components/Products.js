@@ -8,8 +8,7 @@ let products = {
 function Products(props) {
     return (
         <div>
-            <h1>Product List:</h1>
-            <p>tax = {props.tax}</p>
+            <h1>Product List, tax: {props.tax}% :</h1>
             <ul>
             {
                 Object.entries(products).map( ([product, price]) => {
@@ -22,7 +21,7 @@ function Products(props) {
 };
 
 function priceWithTax(price, tax) {
-    return price * (1 + tax / 100);
+    return price + price * tax / 100;
 }
 
 export default Products;
