@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './style.css';
 
-function App() {
-  const NAME = 'Goran';
+const NAME = 'Goran';
 
+function App() {
   return (
     <div className="App">
         <img src={logo} className="logo" alt="logo" />
