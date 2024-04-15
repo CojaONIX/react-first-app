@@ -23,19 +23,6 @@ function App() {
   let [name, setName] = useState('Hello');
   let [tax, setTax] = useState(20);
 
-  function changeName(e) {
-    setName(e.target.value);
-  }
-
-  function clickOnButton() {
-    console.log(name);
-  }
-
-  
-  function changeTax(e) {
-    setTax(e.target.value);
-  }
-
   return (
     <>
       <div style={{ backgroundColor: theme }}>
@@ -45,13 +32,13 @@ function App() {
           <p style={{ color: paragraphColor, backgroundColor: 'yellow', padding: '10px' }}>Ovo je moj prvi React App</p>
       </div>
 
-      <button onClick={clickOnButton}>{ name }</button>
-      <input type="text" onInput={changeName} />
+      <button onClick={ () => console.log(name) }>{ name }</button>
+      <input type="text" onInput={ (e) => setName(e.target.value) } />
 
       <br /><br />
 
       <label>Tax:</label><br />
-      <input type="number" onInput={changeTax} />
+      <input type="number" onInput={ (e) => setTax(e.target.value) } />
 
       <Products tax={ tax } />
       <Products tax="30" />
