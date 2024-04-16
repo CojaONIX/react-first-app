@@ -32,6 +32,12 @@ function Products(props) {
         setNewProductPrice('');
     }
 
+    function search(e) {
+        const searchTerm = e.currentTarget.value;
+        const search = products.hasOwnProperty(searchTerm);
+        console.log(search);
+    }
+
     return (
         <div>
             <h1>Product List, tax: {props.tax}% :</h1>
@@ -45,6 +51,13 @@ function Products(props) {
             </ul>
 
             <div>
+                <label>Search Product: </label> <br />
+                <input type="text" onInput={ search } />
+            </div>
+            <hr />
+
+            <div>
+
                 <label>Naziv Proizvoda: </label>
                 <input type="text" value={newProductName} onInput={ (e) => setNewProductName(e.target.value) } />
                 <br/>
