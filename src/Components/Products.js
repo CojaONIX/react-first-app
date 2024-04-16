@@ -10,6 +10,7 @@ function Products(props) {
 
     let [newProductName, setNewProductName] = useState('');
     let [newProductPrice, setNewProductPrice] = useState('');
+    let [infoMessage, setInfoMessage] = useState('');
 
     function addProduct() {
         if(newProductName === '') {
@@ -34,8 +35,11 @@ function Products(props) {
 
     function search(e) {
         const searchTerm = e.currentTarget.value.toLowerCase();
-        console.log(Object.keys(products).some(key => key.toLowerCase() === searchTerm));
-
+        infoMessage = Object.keys(products).some(key => key.toLowerCase() === searchTerm)
+                            ? 'Proizvod postoji'
+                            : 'Proizvod NE postoji';
+        //console.log(infoMessage);
+        setInfoMessage(infoMessage);
     }
 
     return (
@@ -53,6 +57,7 @@ function Products(props) {
             <div>
                 <label>Search Product: </label> <br />
                 <input type="text" onInput={ search } />
+                <p>{infoMessage}</p>
             </div>
             <hr />
 
