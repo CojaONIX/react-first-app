@@ -33,9 +33,9 @@ function Products(props) {
     }
 
     function search(e) {
-        const searchTerm = e.currentTarget.value;
-        const search = products.hasOwnProperty(searchTerm);
-        console.log(search);
+        const searchTerm = e.currentTarget.value.toLowerCase();
+        console.log(Object.keys(products).some(key => key.toLowerCase() === searchTerm));
+
     }
 
     return (
