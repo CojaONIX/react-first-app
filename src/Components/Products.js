@@ -9,13 +9,27 @@ function Products(props) {
     });
 
     let [newProductName, setNewProductName] = useState('');
-    let [newProductPrice, setNewProductPrice] = useState(0);
+    let [newProductPrice, setNewProductPrice] = useState('');
 
     function addProduct() {
-        setProducts({...products, [newProductName]: parseInt(newProductPrice)});
+        if(newProductName === '') {
+            console.log('Naziv nije unet!');
+            return;
+        }
+
+        if(newProductPrice === '') {
+            console.log('Cena nije uneta!');
+            return;
+        }
+
+        let newProduct = {[newProductName]: parseInt(newProductPrice)};
+        setProducts( (currentProducts) => ({
+            ...currentProducts,
+            ...newProduct
+        }) );
+
         setNewProductName('');
-        setNewProductPrice(0);
-        console.log(products);
+        setNewProductPrice('');
     }
 
     return (
