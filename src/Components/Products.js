@@ -44,32 +44,46 @@ function Products(props) {
 
     return (
         <div>
-            <h1>Product List, tax: {props.tax}% :</h1>
-            <button onClick={ () => setProducts({}) }>Delete Products</button>
-            <ul>
+
+            <button className="btn btn-outline-danger my-3" onClick={ () => setProducts({}) }>Delete Products</button>
+
+            <h1>Product List:</h1>
+            <table className="table">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Tax</th>
+                    <th>With Tax</th>
+                </tr>
             {
                 Object.entries(products).map( ([product, price]) => {
-                    return <li>{product} - ${price} - with tax: ${ priceWithTax(price, props.tax) }</li>
+                    return  <tr>
+                                <td>{product}</td>
+                                <td>${price}</td>
+                                <td>{props.tax}</td>
+                                <td>${ priceWithTax(price, props.tax) }</td>
+                            </tr>
                 })
             }
-            </ul>
+            </table>
 
             <div>
                 <label>Search Product: </label> <br />
-                <input type="text" onInput={ search } />
+                <input className="form-control w-50" type="text" onInput={ search } />
                 <p>{infoMessage}</p>
             </div>
             <hr />
 
             <div>
 
+                <h3>Dodavanje proizvoda</h3>
                 <label>Naziv Proizvoda: </label>
-                <input type="text" value={newProductName} onInput={ (e) => setNewProductName(e.target.value) } />
+                <input className='form-control w-50' type="text" value={newProductName} onInput={ (e) => setNewProductName(e.target.value) } />
                 <br/>
                 <label>Cena Proizvoda: </label>
-                <input type="number" value={newProductPrice} onInput={ (e) => setNewProductPrice(e.target.value) } />
+                <input className='form-control w-25' type="number" value={newProductPrice} onInput={ (e) => setNewProductPrice(e.target.value) } />
                 <br/>
-                <button onClick={ addProduct }>Add new product</button>
+                <button className="btn btn-outline-primary mb-5" onClick={ addProduct }>Add new product</button>
             </div>
         </div>
     );
