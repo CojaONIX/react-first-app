@@ -12,9 +12,10 @@ function Products(props) {
     let [newProductPrice, setNewProductPrice] = useState(0);
 
     function addProduct() {
-        setProducts({...products, [newProductName]: newProductPrice});
+        setProducts({...products, [newProductName]: parseInt(newProductPrice)});
         setNewProductName('');
         setNewProductPrice(0);
+        console.log(products);
     }
 
     return (
