@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './style.css';
 import Products from './Components/Products';
 import { useState } from 'react';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const myStyle = {
   color: 'blue',
@@ -32,7 +33,7 @@ function App() {
           <p style={{ color: paragraphColor, backgroundColor: 'yellow', padding: '10px' }}>Ovo je moj prvi React App</p>
       </div>
 
-      <button onClick={ () => console.log(name) }>{ name }</button>
+      <button className='btn btn-outline-primary' onClick={ () => console.log(name) }>{ name }</button>
       <input type="text" onInput={ (e) => setName(e.target.value) } />
 
       <br /><br />
